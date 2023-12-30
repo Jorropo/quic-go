@@ -70,9 +70,9 @@ type receivedPacket struct {
 	rcvTime    time.Time
 	data       []byte
 
-	ecn protocol.ECN
-
 	info packetInfo // only valid if the contained IP address is valid
+
+	ecn protocol.ECN
 }
 
 func (p *receivedPacket) Size() protocol.ByteCount { return protocol.ByteCount(len(p.data)) }
